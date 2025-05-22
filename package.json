@@ -1,0 +1,29 @@
+{
+  "name": "ikebana-webflow-harness",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\"",
+    "type-check": "tsc --noEmit",
+    "test": "npm run lint && npm run type-check",
+    "cypress:run": "cypress run",
+    "lhci": "lhci autorun --config=./lighthouserc.json",
+    "ci": "npm run lint && npm run type-check && npm run lhci && npm run cypress:run",
+    "build": "tsc --project tsconfig.json"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.14.3",
+    "@types/node": "^20.11.25",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "cypress": "^13.6.4",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
